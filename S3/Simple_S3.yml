@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Cloudformation template to create simple S3 Bucket.
+Description: Cloudformation template to create simple S3 Bucket
 Resources:
   SimpleS3Bucket:
     Type: AWS::S3::Bucket
