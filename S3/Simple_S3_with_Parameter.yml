@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Cloudformation Template to create S3 bucket using Parameters.
+Description: Cloudformation Template to create S3 bucket using Parameters
 Parameters:
  CFnS3BucketName:
    Type: String
