@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Cloudformation Template to create Private S3 bucket using Parameters.
+Parameters:
+ CFnS3BucketName:
+   Type: String
+   Description: Enter Bucket Name
+   Default: cfn-s3-bucket-2021-19-10
+ CFnS3BucketBlockPublicAcls:
+   Type: String
+   Description: Do you want bucket Block Public Acls
+   Default: true
+   AllowedValues:
+     - true
+     - false
+ CFnS3BucketBlockPublicPolicy:
+   Type: String
+   Description: Do you want bucket Block Public Policy
+   Default: true
+   AllowedValues:
+     - true
+     - false
+ CFnS3BucketIgnorePublicAcls:
+   Type: String
+   Description: Do you want bucket Ignore Public Acls
+   Default: true
+   AllowedValues:
+     - true
+     - false
+ CFnS3BucketRestrictPublicBuckets:
+   Type: String
+   Description: Do you want bucket Restrict Public Buckets
+   Default: true
+   AllowedValues:
+     - true
+     - false   
+Resources:
+ SimpleS3Bucket:
+  Type: AWS::S3::Bucket
+  Properties:
+    BucketName: !Ref CFnS3BucketName
+    PublicAccessBlockConfiguration:
+      BlockPublicAcls: !Ref CFnS3BucketBlockPublicAcls
+      BlockPublicPolicy: !Ref CFnS3BucketBlockPublicPolicy
+      IgnorePublicAcls: !Ref CFnS3BucketIgnorePublicAcls
+      RestrictPublicBuckets: !Ref CFnS3BucketRestrictPublicBuckets
+ 
