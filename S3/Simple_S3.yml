@@ -1,0 +1,6 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  SimpleS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+      BucketName: manoj-sample-bucket-2021-19-10
