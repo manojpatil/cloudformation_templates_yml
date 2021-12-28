@@ -5,32 +5,30 @@ Parameters:
   Type: String
   Description: Select Instance Type from list
   Default: t2.micro
-  "AllowedValues": [
-      "t1.micro"
-      "m1.small"
-      "m1.large"
-      "m1.xlarge"
-      "m2.xlarge"
-      "m2.2xlarge"
-      "m2.4xlarge"
-      "c1.medium"
-      "c1.xlarge"
-      "cc1.4xlarge"
-    ]
-EC2AMIInput:
- Type: String
- Description: Select AMI from list
- Default: ami-041d6256ed0f2061c
- Allowed Values:[
-		"ami-6411e20d"
-		"ami-7a11e213"
-				]
-
- 
+  AllowedValues:
+   - t2.micro
+   - m1.small
+   - m1.large
+   - m1.xlarge
+   - m2.xlarge
+   - m2.2xlarge
+   - m2.4xlarge
+   - c1.medium
+   - c1.xlarge
+   - cc1.4xlarge
+ EC2AMIInput:
+  Type: String
+  Description: Select AMI from list
+  Default: ami-041d6256ed0f2061c
+  AllowedValues:
+   - ami-6411e20d
+   - ami-7a11e213
+   - ami-041d6256ed0f2061c
+   
 Resources:
  EC2InstanceTypeParameter :
   Type: AWS::EC2::Instance
   Properties:
-   ImageId: ami-041d6256ed0f2061c
+   ImageId: !Ref EC2AMIInput
    InstanceType: !Ref EC2InstanceTypeInput
   
