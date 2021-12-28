@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Cloudformation Template to create EC2 Instance with Instance Type as Parameter value.
+Parameters:
+ EC2InstanceTypeInput:
+  Type: String
+  Description: Enter Instance Type
+  Default: t2.micro
+Resources:
+ EC2withInstanceTypeParameter:
+  Type: AWS::EC2::Instance
+  Properties:
+   ImageId: ami-041d6256ed0f2061c
+   InstanceType: !Ref EC2InstanceTypeInput
+ 
+ 
+ 

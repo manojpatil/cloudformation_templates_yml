@@ -1,4 +1,5 @@
----
+AWSTemplateFormatVersion: 2010-09-09
+Description: Cloudformation Template to create basic EC2 Instance.
 Resources:
  SimpleEC2Instance:
   Type: AWS::EC2::Instance
